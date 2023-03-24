@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap');*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+  background-color: pink;
+  padding-top: 100px;
+  text-transform: uppercase;
+  font-family:Crimson Text;
+}
+.loader {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #b0a8e2;
+  border-radius: 50%;
+  display:block;
+  margin:auto;
+  animation: spin 1s linear infinite;
+}
+.loader::before {
+  content:"" ;  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgb(199, 255, 110);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  }
+@keyframes spin {
+0% {
+transform: rotate(0deg);
+}
+100% {
+transform: rotate(360deg);
+}
+}
+h1 {
+  position: relative;
+  font-size: 5em;
+  color: rgb(199, 255, 110);
+  border-bottom: 10px solid white;
+  line-height: initial;
+}
+h1::before {
+  content: attr(loading-text);
+  position: absolute;
+  width: 100%;
+  color: #b0a8e2;
+  border-bottom: 10px solid #b0a8e2;
+  animation: wait 5s linear infinite;
+}
+@keyframes wait{
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.flower {
+  width: 280px;
+  height: 100px;
+  background: rgb(199, 255, 110);
+  border-radius: 50px;
+  margin-top: 200px;
+  margin-left: 800px;
+  animation: spin 8s infinite linear;
+}
+.flower::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 280px;
+  height: 100px;
+  background: rgb(199, 255, 110);
+  border-radius: 50px;
+  transform: rotate(60deg)
+
+}
+.flower::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 280px;
+  height: 100px;
+  background: rgb(199, 255, 110);
+  border-radius: 50px;
+  transform: rotate(-60deg)
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
